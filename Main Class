@@ -1,0 +1,89 @@
+MAIN Program
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package main;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author ASUS
+ */
+public class Main {
+        static int pilihan;
+        static double Suhu;
+    
+    public static void main(String[] args) {
+        Konversi suhu = new Konversi();
+        double celcius ,farenhait , reamur, kelvin;
+        boolean kondisi = false;
+        Scanner input = new Scanner(System.in);
+        
+        
+        System.out.println("+Program Konversi Suhu Air+");
+        System.out.println("Input Data");
+        System.out.println("Masukan suhu celcius = ");
+        Suhu = input.nextDouble();
+        
+        while(kondisi!=true){                        
+            System.out.println("\nOpsi");
+            System.out.println("-----");
+            System.out.println("1. Konversi Suhu");
+            System.out.println("2. Rubah Suhu");
+            System.out.println("3. Exit");
+            System.out.print("Pilih = ");
+            pilihan = input.nextInt();
+            
+            switch(pilihan){
+                case 1:
+                    if(Suhu<=0){
+                        farenhait = suhu.SuhuFarenhait();
+                        reamur = suhu.SuhuReamur();
+                        kelvin = suhu.SuhuKelvin();
+
+                        System.out.println("Celcius = "+Suhu+" c");
+                        System.out.println("Farenhait = "+farenhait+" f");
+                        System.out.println("Reamur = "+reamur+" r");
+                        System.out.println("Kelvin = "+kelvin+" k");
+                        System.out.println("Kondisi air membeku");
+                    }
+                    else if(Suhu<100){
+                        farenhait = suhu.SuhuFarenhait();
+                        reamur = suhu.SuhuReamur();
+                        kelvin = suhu.SuhuKelvin();
+
+                        System.out.println("Celcius = "+Suhu+" c");
+                        System.out.println("Farenhait = "+farenhait+" f");
+                        System.out.println("Reamur = "+reamur+" r");
+                        System.out.println("Kelvin = "+kelvin+" k");
+                        System.out.println("Kondisi air Normal");
+                    }
+                    else if(Suhu>=100){
+                        farenhait = suhu.SuhuFarenhait();
+                        reamur = suhu.SuhuReamur();
+                        kelvin = suhu.SuhuKelvin();
+
+                        System.out.println("Celcius = "+Suhu+" c");
+                        System.out.println("Farenheit = "+farenhait+" f");
+                        System.out.println("Reamur = "+reamur+" r");
+                        System.out.println("Kelvin = "+kelvin+" k");
+                        System.out.println("Kondisi air mendidih");
+                    }
+                    break;
+                case 2:
+                    System.out.println("\nInput Data");
+                    System.out.println("----------");
+                    System.out.print("Masukkan suhu celcius = ");
+                    Suhu = input.nextDouble();
+                    break;
+                case 3:
+                    kondisi=true;                    
+            }
+            
+        }
+    }
+}
