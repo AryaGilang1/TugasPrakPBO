@@ -1,0 +1,18 @@
+Konversi Class
+
+package main;
+
+public class Konversi {
+    double SuhuFarenhait(){
+        return(Main.Suhu*9/5+32);
+    }
+    double SuhuReamur(){
+        return(Main.Suhu*4/5);
+    }
+    double SuhuKelvin(){
+        return(Main.Suhu+273.15);
+    }
+
+
+   
+}
